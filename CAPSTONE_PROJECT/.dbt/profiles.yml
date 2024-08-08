@@ -1,0 +1,14 @@
+capstone:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: 'capstone-project-429612'
+      dataset: 'capstoneproject'
+      threads: 1
+      keyfile: 'C:/Users/HP/Desktop/altschool_project/third_semester_repo/CAPSTONE_PROJECT/capstone-project-429612-d694bc2fcd86.json'
+      timeout_seconds: 300
+      location: US
+      priority: interactive
+      retries: 1
