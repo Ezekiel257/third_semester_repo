@@ -1,0 +1,88 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: postgres_db
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./Ecommerce_DB/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./data:/data
+    networks:
+      - airflow_net
+    restart: always
+
+  airflow_db:
+    image: postgres:15
+    container_name: airflow_db
+    environment:
+      POSTGRES_DB: airflow
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - airflow_db_data:/var/lib/postgresql/data
+    networks:
+      - airflow_net
+    restart: always
+
+  webserver:
+    build: .
+    container_name: airflow_webserver
+    depends_on:
+      - db
+      - airflow_db
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow_db:5432/airflow
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - ${GCS_KEYFILE_PATH}:/opt/airflow/keys/gcs_keyfile.json
+    ports:
+      - "8080:8080"
+    command: >
+      bash -c "
+      airflow db init &&
+      airflow users create --username airflow --password airflow --firstname air --lastname flow --role Admin --email ezekieloshin@gmail.com &&
+      airflow webserver"
+    networks:
+      - airflow_net
+    restart: always
+
+  scheduler:
+    build: .
+    container_name: airflow_scheduler
+    depends_on:
+      - db
+      - airflow_db
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow_db:5432/airflow
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - ${GCS_KEYFILE_PATH}:/opt/airflow/keys/gcs_keyfile.json
+    command: scheduler
+    networks:
+      - airflow_net
+    restart: always
+
+volumes:
+  postgres_data:
+  airflow_db_data:
+
+networks:
+  airflow_net:
+    driver: bridge
