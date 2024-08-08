@@ -1,0 +1,13 @@
+/.capstone/Scripts
+/.capstone/pyenv.cfg
+/.capstone/Lib
+/.capstone/Include
+/capstone
+/.env
+/Dags/__pycache__
+/logs
+/plugins
+/python_script
+/gcs_bigquery_upload.py
+/capstone-project-429612-d694bc2fcd86.json
+
