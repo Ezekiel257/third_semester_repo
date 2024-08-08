@@ -10,4 +10,7 @@
 /python_script
 /gcs_bigquery_upload.py
 /capstone-project-429612-d694bc2fcd86.json
+target/
+dbt_packages/
+logs/
 
