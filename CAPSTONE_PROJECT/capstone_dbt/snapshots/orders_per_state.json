@@ -1,0 +1,110 @@
+[
+    {
+        "state": "SP",
+        "total_orders": 40501
+    },
+    {
+        "state": "RJ",
+        "total_orders": 12350
+    },
+    {
+        "state": "MG",
+        "total_orders": 11354
+    },
+    {
+        "state": "RS",
+        "total_orders": 5345
+    },
+    {
+        "state": "PR",
+        "total_orders": 4923
+    },
+    {
+        "state": "SC",
+        "total_orders": 3546
+    },
+    {
+        "state": "BA",
+        "total_orders": 3256
+    },
+    {
+        "state": "DF",
+        "total_orders": 2080
+    },
+    {
+        "state": "ES",
+        "total_orders": 1995
+    },
+    {
+        "state": "GO",
+        "total_orders": 1957
+    },
+    {
+        "state": "PE",
+        "total_orders": 1593
+    },
+    {
+        "state": "CE",
+        "total_orders": 1279
+    },
+    {
+        "state": "PA",
+        "total_orders": 946
+    },
+    {
+        "state": "MT",
+        "total_orders": 886
+    },
+    {
+        "state": "MA",
+        "total_orders": 717
+    },
+    {
+        "state": "MS",
+        "total_orders": 701
+    },
+    {
+        "state": "PB",
+        "total_orders": 517
+    },
+    {
+        "state": "PI",
+        "total_orders": 476
+    },
+    {
+        "state": "RN",
+        "total_orders": 474
+    },
+    {
+        "state": "AL",
+        "total_orders": 397
+    },
+    {
+        "state": "SE",
+        "total_orders": 335
+    },
+    {
+        "state": "TO",
+        "total_orders": 274
+    },
+    {
+        "state": "RO",
+        "total_orders": 243
+    },
+    {
+        "state": "AM",
+        "total_orders": 145
+    },
+    {
+        "state": "AC",
+        "total_orders": 80
+    },
+    {
+        "state": "AP",
+        "total_orders": 67
+    },
+    {
+        "state": "RR",
+        "total_orders": 41
+    }
+]

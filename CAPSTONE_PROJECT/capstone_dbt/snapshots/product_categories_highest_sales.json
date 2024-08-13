@@ -1,0 +1,298 @@
+[
+    {
+        "product_category_name": "beleza_saude",
+        "total_sales": 1436653.3599998367
+    },
+    {
+        "product_category_name": "cama_mesa_banho",
+        "total_sales": 1422172.0299998573
+    },
+    {
+        "product_category_name": "informatica_acessorios",
+        "total_sales": 1367731.2299999073
+    },
+    {
+        "product_category_name": "relogios_presentes",
+        "total_sales": 1312868.3599999165
+    },
+    {
+        "product_category_name": "esporte_lazer",
+        "total_sales": 1178845.5900000054
+    },
+    {
+        "product_category_name": "moveis_decoracao",
+        "total_sales": 1132697.7100000621
+    },
+    {
+        "product_category_name": "utilidades_domesticas",
+        "total_sales": 870489.990000091
+    },
+    {
+        "product_category_name": "automotivo",
+        "total_sales": 734483.2300000151
+    },
+    {
+        "product_category_name": "cool_stuff",
+        "total_sales": 684451.5400000102
+    },
+    {
+        "product_category_name": "ferramentas_jardim",
+        "total_sales": 682533.5300000772
+    },
+    {
+        "product_category_name": "brinquedos",
+        "total_sales": 532026.7100000134
+    },
+    {
+        "product_category_name": "moveis_escritorio",
+        "total_sales": 512575.5899999916
+    },
+    {
+        "product_category_name": "bebes",
+        "total_sales": 460673.4200000166
+    },
+    {
+        "product_category_name": "perfumaria",
+        "total_sales": 441506.9500000124
+    },
+    {
+        "product_category_name": "telefonia",
+        "total_sales": 396672.75999998336
+    },
+    {
+        "product_category_name": "pcs",
+        "total_sales": 269416.98999999964
+    },
+    {
+        "product_category_name": "papelaria",
+        "total_sales": 261816.02999999045
+    },
+    {
+        "product_category_name": "pet_shop",
+        "total_sales": 261124.5499999932
+    },
+    {
+        "product_category_name": null,
+        "total_sales": 216222.799999992
+    },
+    {
+        "product_category_name": "instrumentos_musicais",
+        "total_sales": 210567.489999998
+    },
+    {
+        "product_category_name": "eletroportateis",
+        "total_sales": 208489.78999999794
+    },
+    {
+        "product_category_name": "construcao_ferramentas_construcao",
+        "total_sales": 207882.37999999858
+    },
+    {
+        "product_category_name": "eletronicos",
+        "total_sales": 201083.5299999901
+    },
+    {
+        "product_category_name": "telefonia_fixa",
+        "total_sales": 198239.56999999832
+    },
+    {
+        "product_category_name": "fashion_bolsas_e_acessorios",
+        "total_sales": 180056.54999999338
+    },
+    {
+        "product_category_name": "consoles_games",
+        "total_sales": 172103.72999999783
+    },
+    {
+        "product_category_name": "malas_acessorios",
+        "total_sales": 153937.72999999722
+    },
+    {
+        "product_category_name": "casa_construcao",
+        "total_sales": 116177.04999999888
+    },
+    {
+        "product_category_name": "eletrodomesticos_2",
+        "total_sales": 113934.29999999997
+    },
+    {
+        "product_category_name": "agro_industria_e_comercio",
+        "total_sales": 110333.05000000012
+    },
+    {
+        "product_category_name": "moveis_sala",
+        "total_sales": 107513.87999999979
+    },
+    {
+        "product_category_name": "climatizacao",
+        "total_sales": 80751.41999999965
+    },
+    {
+        "product_category_name": "eletrodomesticos",
+        "total_sales": 80494.42999999944
+    },
+    {
+        "product_category_name": "casa_conforto",
+        "total_sales": 73922.4399999997
+    },
+    {
+        "product_category_name": "construcao_ferramentas_seguranca",
+        "total_sales": 59202.83000000016
+    },
+    {
+        "product_category_name": "moveis_cozinha_area_de_servico_jantar_e_jardim",
+        "total_sales": 59027.12000000015
+    },
+    {
+        "product_category_name": "bebidas",
+        "total_sales": 58321.88000000033
+    },
+    {
+        "product_category_name": "construcao_ferramentas_iluminacao",
+        "total_sales": 57422.61999999991
+    },
+    {
+        "product_category_name": "livros_interesse_geral",
+        "total_sales": 53609.14000000046
+    },
+    {
+        "product_category_name": "audio",
+        "total_sales": 53435.21000000025
+    },
+    {
+        "product_category_name": "sinalizacao_e_seguranca",
+        "total_sales": 48454.93000000013
+    },
+    {
+        "product_category_name": "portateis_casa_forno_e_cafe",
+        "total_sales": 48399.710000000014
+    },
+    {
+        "product_category_name": "industria_comercio_e_negocios",
+        "total_sales": 46343.910000000054
+    },
+    {
+        "product_category_name": "market_place",
+        "total_sales": 37154.88000000026
+    },
+    {
+        "product_category_name": "alimentos",
+        "total_sales": 36582.11000000032
+    },
+    {
+        "product_category_name": "construcao_ferramentas_jardim",
+        "total_sales": 35917.40000000016
+    },
+    {
+        "product_category_name": "fashion_calcados",
+        "total_sales": 26513.25000000012
+    },
+    {
+        "product_category_name": "moveis_quarto",
+        "total_sales": 26417.420000000064
+    },
+    {
+        "product_category_name": "artes",
+        "total_sales": 26391.920000000126
+    },
+    {
+        "product_category_name": "livros_tecnicos",
+        "total_sales": 20346.840000000044
+    },
+    {
+        "product_category_name": "alimentos_bebidas",
+        "total_sales": 20309.470000000092
+    },
+    {
+        "product_category_name": "construcao_ferramentas_ferramentas",
+        "total_sales": 18815.150000000034
+    },
+    {
+        "product_category_name": "fashion_roupa_masculina",
+        "total_sales": 14520.499999999962
+    },
+    {
+        "product_category_name": "artigos_de_natal",
+        "total_sales": 13933.979999999976
+    },
+    {
+        "product_category_name": "fashion_underwear_e_moda_praia",
+        "total_sales": 10320.929999999957
+    },
+    {
+        "product_category_name": "tablets_impressao_imagem",
+        "total_sales": 8492.909999999987
+    },
+    {
+        "product_category_name": "cine_foto",
+        "total_sales": 8037.39999999999
+    },
+    {
+        "product_category_name": "dvds_blu_ray",
+        "total_sales": 6363.629999999977
+    },
+    {
+        "product_category_name": "musica",
+        "total_sales": 6112.219999999999
+    },
+    {
+        "product_category_name": "livros_importados",
+        "total_sales": 5728.699999999998
+    },
+    {
+        "product_category_name": "artigos_de_festas",
+        "total_sales": 4966.28
+    },
+    {
+        "product_category_name": "moveis_colchao_e_estofado",
+        "total_sales": 4368.079999999999
+    },
+    {
+        "product_category_name": "fashion_roupa_feminina",
+        "total_sales": 4132.999999999998
+    },
+    {
+        "product_category_name": "portateis_cozinha_e_preparadores_de_alimentos",
+        "total_sales": 4003.5900000000015
+    },
+    {
+        "product_category_name": "fraldas_higiene",
+        "total_sales": 2943.59
+    },
+    {
+        "product_category_name": "fashion_esporte",
+        "total_sales": 2723.2000000000007
+    },
+    {
+        "product_category_name": "la_cuisine",
+        "total_sales": 2495.99
+    },
+    {
+        "product_category_name": "pc_gamer",
+        "total_sales": 2113.94
+    },
+    {
+        "product_category_name": "artes_e_artesanato",
+        "total_sales": 1904.7
+    },
+    {
+        "product_category_name": "flores",
+        "total_sales": 1810.4399999999994
+    },
+    {
+        "product_category_name": "casa_conforto_2",
+        "total_sales": 966.669999999999
+    },
+    {
+        "product_category_name": "cds_dvds_musicais",
+        "total_sales": 910.0
+    },
+    {
+        "product_category_name": "fashion_roupa_infanto_juvenil",
+        "total_sales": 649.83
+    },
+    {
+        "product_category_name": "seguros_e_servicos",
+        "total_sales": 283.28999999999996
+    }
+]

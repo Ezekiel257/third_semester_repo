@@ -1,0 +1,197 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "This model will pull in raw orders data, joining with related tables to provide a more complete picture of the orders."
+    columns:
+      - name: order_id
+        description: "Unique identifier for the order."
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "Unique identifier for the customer."
+        tests:
+          - not_null
+      - name: order_status
+        description: "Status of the order."
+        tests:
+          - not_null
+      - name: order_purchase_timestamp
+        description: "Timestamp when the order was placed."
+        tests:
+          - not_null
+      - name: order_approved_at
+        description: "Timestamp when the order was approved."
+      - name: order_delivered_carrier_date
+        description: "Timestamp when the order was delivered to the carrier."
+      - name: order_delivered_customer_date
+        description: "Timestamp when the order was delivered to the customer."
+      - name: order_estimated_delivery_date
+        description: "Estimated delivery date for the order."
+      - name: customer_zip_code_prefix
+        description: "Customer's zip code prefix."
+        tests:
+          - not_null
+      - name: customer_city
+        description: "Customer's city."
+        tests:
+          - not_null
+      - name: customer_state
+        description: "Customer's state."
+        tests:
+          - not_null
+      - name: order_item_id
+        description: "Unique identifier for the order item."
+        tests:
+          - not_null
+      - name: product_id
+        description: "Unique identifier for the product."
+        tests:
+          - not_null
+      - name: seller_id
+        description: "Unique identifier for the seller."
+        tests:
+          - not_null
+      - name: shipping_limit_date
+        description: "Shipping limit date for the order item."
+        tests:
+          - not_null
+      - name: price
+        description: "Price of the order item."
+        tests:
+          - not_null
+      - name: freight_value
+        description: "Freight value of the order item."
+        tests:
+          - not_null
+      - name: payment_sequential
+        description: "Sequential number of the payment for the order."
+      - name: payment_type
+        description: "Type of payment used for the order."
+      - name: payment_installments
+        description: "Number of installments for the payment."
+      - name: payment_value
+        description: "Value of the payment."
+
+  - name: stg_products
+    description: "This model will pull in raw product data, possibly joining with the product category translations to include English names."
+    columns:
+      - name: product_id
+        description: "Unique identifier for the product."
+        tests:
+          - unique
+          - not_null
+      - name: product_category_name
+        description: "Category name of the product."
+        tests:
+          - not_null
+      - name: product_name_length
+        description: "Length of the product name."
+        tests:
+          - not_null
+      - name: product_description_length
+        description: "Length of the product description."
+        tests:
+          - not_null
+      - name: product_photos_qty
+        description: "Number of photos for the product."
+        tests:
+          - not_null
+      - name: product_weight_g
+        description: "Weight of the product in grams."
+        tests:
+          - not_null
+      - name: product_length_cm
+        description: "Length of the product in centimeters."
+        tests:
+          - not_null
+      - name: product_height_cm
+        description: "Height of the product in centimeters."
+        tests:
+          - not_null
+      - name: product_width_cm
+        description: "Width of the product in centimeters."
+        tests:
+          - not_null
+
+  - name: int_sales_by_category
+    description: "This model will aggregate sales data by product category, summing up the total sales and counting the number of items sold."
+    columns:
+      - name: product_category_name
+        description: "Category name of the product."
+        tests:
+          - not_null
+      - name: total_sales
+        description: "Total sales amount for the product category."
+        tests:
+          - not_null
+      - name: num_orders
+        description: "Number of orders in the product category."
+        tests:
+          - not_null
+
+  - name: int_avg_delivery_time
+    description: "Calculated average delivery time for each order."
+    columns:
+      - name: avg_delivery_time_days
+        description: "This model calculates the average delivery time for each order, defined as the difference between the order's estimated delivery date and the actual delivery date."
+        tests:
+          - not_null
+
+  - name: fct_sales_by_category
+    description: "Aggregates sales data by product category, including total sales, number of orders, and average order value."
+    columns:
+      - name: product_category_name
+        description: "Category name of the product."
+        tests:
+          - not_null
+      - name: total_sales
+        description: "Total sales amount for the product category."
+        tests:
+          - not_null
+      - name: num_orders
+        description: "Number of orders in the product category."
+        tests:
+          - not_null
+      - name: avg_order_value
+        description: "Average value of orders in the product category."
+        tests:
+          - not_null
+
+  - name: fct_avg_delivery_time
+    description: "Calculates the average, maximum, and minimum delivery times for orders."
+    columns:
+      - name: avg_delivery_time_days
+        description: "Average number of days taken to deliver orders."
+        tests:
+          - not_null
+      - name: max_delivery_time_days
+        description: "Maximum number of days taken to deliver orders."
+        tests:
+          - not_null
+      - name: min_delivery_time_days
+        description: "Minimum number of days taken to deliver orders."
+        tests:
+          - not_null
+
+  - name: fct_orders_by_state
+    description: "Aggregates orders and sales data by state, including total orders, total sales, and average order value."
+    columns:
+      - name: state
+        description: "State in which the orders were placed."
+        tests:
+          - not_null
+      - name: total_orders
+        description: "Total number of orders placed in the state."
+        tests:
+          - not_null
+      - name: total_sales
+        description: "Total sales amount for orders in the state."
+        tests:
+          - not_null
+      - name: avg_order_value
+        description: "Average value of orders in the state."
+        tests:
+          - not_null
+
