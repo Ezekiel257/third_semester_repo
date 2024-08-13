@@ -1,0 +1,231 @@
+version: 2
+
+sources:
+  - name: capstoneproject
+    description: "Source for Olist e-commerce data"
+    tables:
+      - name: olist_orders
+        description: "Detailed information about individual orders placed on Olist."
+        columns:
+          - name: order_id
+            description: "Unique identifier for the order."
+            tests:
+              - unique
+              - not_null
+          - name: customer_id
+            description: "Unique identifier for the customer who placed the order."
+            tests:
+              - not_null
+          - name: order_status
+            description: "Current status of the order (e.g., 'shipped', 'delivered')."
+            tests:
+              - not_null
+          - name: order_purchase_timestamp
+            description: "Timestamp when the order was placed."
+            tests:
+              - not_null
+          - name: order_approved_at
+            description: "Timestamp when the order was approved by Olist."
+          - name: order_delivered_carrier_date
+            description: "Timestamp when the order was delivered to the shipping carrier."
+          - name: order_delivered_customer_date
+            description: "Timestamp when the order was delivered to the customer."
+          - name: order_estimated_delivery_date
+            description: "Estimated delivery date for the order."
+      - name: olist_order_items
+        description: "Details about the items included in each order."
+        columns:
+          - name: order_item_id
+            description: "Unique identifier for the order item."
+            tests:
+              - unique
+              - not_null
+          - name: order_id
+            description: "Foreign key referencing the `olist_orders` table."
+            tests:
+              - not_null
+          - name: product_id
+            description: "Foreign key referencing the `olist_products` table."
+            tests:
+              - not_null
+          - name: seller_id
+            description: "Foreign key referencing the `olist_sellers` table."
+            tests:
+              - not_null
+          - name: shipping_limit_date
+            description: "Date by which the seller must ship the item."
+            tests:
+              - not_null
+          - name: price
+            description: "Price of the order item."
+            tests:
+              - not_null
+          - name: freight_value
+            description: "Shipping cost for the order item."
+            tests:
+              - not_null
+      - name: olist_products
+        description: "Information about the products sold on Olist."
+        columns:
+          - name: product_id
+            description: "Unique identifier for the product."
+            tests:
+              - unique
+              - not_null
+          - name: product_category_name
+            description: "Category name of the product."
+            tests:
+              - not_null
+          - name: product_name_length
+            description: "Length of the product name."
+            tests:
+              - not_null
+          - name: product_description_length
+            description: "Length of the product description."
+            tests:
+              - not_null
+          - name: product_photos_qty
+            description: "Number of photos associated with the product."
+            tests:
+              - not_null
+          - name: product_weight_g
+            description: "Weight of the product in grams."
+            tests:
+              - not_null
+          - name: product_length_cm
+            description: "Length of the product in centimeters."
+            tests:
+              - not_null
+          - name: product_height_cm
+            description: "Height of the product in centimeters."
+            tests:
+              - not_null
+          - name: product_width_cm
+            description: "Width of the product in centimeters."
+            tests:
+              - not_null
+      - name: olist_customers
+        description: "Information about customers who have placed orders on Olist."
+        columns:
+          - name: customer_id
+            description: "Unique identifier for the customer."
+            tests:
+              - unique
+              - not_null
+          - name: customer_unique_id
+            description: "Unique identifier for the customer, even if they have multiple accounts."
+            tests:
+              - not_null
+          - name: customer_zip_code_prefix
+            description: "Customer's zip code prefix."
+            tests:
+              - not_null
+          - name: customer_city
+            description: "Customer's city."
+            tests:
+              - not_null
+          - name: customer_state
+            description: "Customer's state."
+            tests:
+              - not_null
+      - name: olist_sellers
+        description: "Information about sellers who have listed products on Olist."
+        columns:
+          - name: seller_id
+            description: "Unique identifier for the seller."
+            tests:
+              - unique
+              - not_null
+          - name: seller_zip_code_prefix
+            description: "Seller's zip code prefix."
+            tests:
+              - not_null
+          - name: seller_city
+            description: "Seller's city."
+            tests:
+              - not_null
+          - name: seller_state
+            description: "Seller's state."
+            tests:
+              - not_null
+      - name: olist_order_payments
+        description: "Information about payments made for orders."
+        columns:
+          - name: order_id
+            description: "Foreign key referencing the `olist_orders` table."
+            tests:
+              - not_null
+          - name: payment_sequential
+            description: "Sequential number of the payment for the order."
+            tests:
+              - not_null
+          - name: payment_type
+            description: "Type of payment used for the order (e.g., 'credit card', 'boleto')."
+            tests:
+              - not_null
+          - name: payment_installments
+            description: "Number of installments for the payment."
+            tests:
+              - not_null
+          - name: payment_value
+            description: "Value of the payment."
+            tests:
+              - not_null
+      - name: olist_order_reviews
+        description: "Customer reviews for orders."
+        columns:
+          - name: review_id
+            description: "Unique identifier for the review."
+            tests:
+              - unique
+              - not_null
+          - name: order_id
+            description: "Foreign key referencing the `olist_orders` table."
+            tests:
+              - not_null
+          - name: review_score
+            description: "Review score given by the customer (1-5 stars)."
+            tests:
+              - not_null
+          - name: review_comment_title
+            description: "Title of the review comment."
+          - name: review_comment_message
+            description: "Text of the review comment."
+          - name: review_creation_date
+            description: "Date when the review was created."
+          - name: review_answer_timestamp
+            description: "Timestamp when Olist responded to the review."
+      - name: product_category_name_translation
+        description: "Translations for product category names."
+        columns:
+          - name: product_category_name
+            description: "Original product category name."
+            tests:
+              - not_null
+          - name: product_category_name_english
+            description: "English translation of the product category name."
+            tests:
+              - not_null
+      - name: olist_geolocation
+        description: "Geolocation data for Olist."
+        columns:
+          - name: geolocation_zip_code_prefix
+            description: "Zip code prefix."
+            tests:
+              - not_null
+          - name: geolocation_lat
+            description: "Latitude."
+            tests:
+              - not_null
+          - name: geolocation_lng
+            description: "Longitude."
+            tests:
+              - not_null
+          - name: geolocation_city
+            description: "City."
+            tests:
+              - not_null
+          - name: geolocation_state
+            description: "State."
+            tests:
+              - not_null

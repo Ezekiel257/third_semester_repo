@@ -25,7 +25,7 @@ BIGQUERY_DATASET = os.getenv('BIGQUERY_DATASET')
 BIGQUERY_TABLE_PREFIX = os.getenv('BIGQUERY_TABLE_PREFIX', 'ecommerce')
 
 # SQLAlchemy connection string
-SQLALCHEMY_CONN_STRING = f"postgresql+psycopg2://{POSTGRES_USER}:{POSTGRES_PASSWORD}@postgres_db:{POSTGRES_PORT}/{POSTGRES_DB}"
+# SQLALCHEMY_CONN_STRING = f"postgresql+psycopg2://{POSTGRES_USER}:{POSTGRES_PASSWORD}@postgres_db:{POSTGRES_PORT}/{POSTGRES_DB}"
 
 # List of tables to move
 tables = [
@@ -86,14 +86,14 @@ def check_table_exists(table_name):
         logger.error(f"Failed to check table using Airflow connection: {e}")
         try:
             # Fallback to using SQLAlchemy connection
-            engine = create_engine(SQLALCHEMY_CONN_STRING)
-            with engine.connect() as conn:
-                result = conn.execute(f"SELECT to_regclass('public.{table_name}');").fetchone()
-                if result[0] is None:
-                    raise ValueError(f"Table public.{table_name} does not exist using SQLAlchemy connection")
-                logger.info(f"Table public.{table_name} exists using SQLAlchemy connection.")
-        except Exception as e:
-            logger.error(f"Failed to check table using SQLAlchemy connection: {e}")
+           # engine = create_engine(SQLALCHEMY_CONN_STRING)
+           # with engine.connect() as conn:
+           #     result = conn.execute(f"SELECT to_regclass('public.{table_name}');").fetchone()
+           #     if result[0] is None:
+           #         raise ValueError(f"Table public.{table_name} does not exist using SQLAlchemy connection")
+          #      logger.info(f"Table public.{table_name} exists using SQLAlchemy connection.")
+      #  except Exception as e:
+      #      logger.error(f"Failed to check table using SQLAlchemy connection: {e}")
             try:
                 # Fallback to using the direct connection string
                 conn = psycopg2.connect(
