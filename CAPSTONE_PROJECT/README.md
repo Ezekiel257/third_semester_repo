@@ -28,7 +28,7 @@ This README.md serves as a comprehensive guide, outlining the project's structur
         * Workflow Definition
         * Tasks
 3. **Data Migration**
-    * ETL Process
+    * ELT Process
     * Data Movement
 4. **dbt Setup**
     * Installation
@@ -137,13 +137,13 @@ The DAGs are configured to handle errors, retries, and logging, ensuring robustn
 
 ## 3. Data Migration
 
-### 3.1 ETL Process
+### 3.1 ELT Process
 
-The ETL process involves moving data from PostgreSQL to BigQuery. This process includes:
+The ELT process involves moving data from PostgreSQL to BigQuery. This process includes:
 
 * **Extraction:** Extracting data from PostgreSQL tables and saving it in a suitable format (e.g., Parquet) to Google Cloud Storage.
-* **Transformation:** Data may be transformed during the extraction process to ensure it is in the correct format for loading into BigQuery.
-* **Loading:** Loading the transformed data from Google Cloud Storage into BigQuery tables for analysis and reporting.
+* **Loading:**  The data is loaded into the GCS and then BigQuery tables
+* **Transformation:** Data is transformed after the extraction process for analytical purposes.
 
 ### 3.2 Data Movement
 
