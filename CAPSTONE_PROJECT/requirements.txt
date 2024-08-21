@@ -2,7 +2,7 @@
 psycopg2-binary==2.9.6
 
 # Apache Airflow and related packages
-apache-airflow==2.9.3
+apache-airflow==2.10.0
 apache-airflow-providers-postgres==3.0.0
 apache-airflow-providers-google==8.10.0
 python-dotenv==0.21.0
